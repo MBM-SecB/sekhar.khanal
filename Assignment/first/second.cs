@@ -3,7 +3,7 @@ using System;
 
 class Program
     {
-        static void Main(string[] args)
+        static void Main3(string[] args)
         {
             Program p = new Program();
             p.GetInitials();
