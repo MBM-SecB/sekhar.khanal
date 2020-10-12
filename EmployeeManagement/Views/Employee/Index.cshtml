@@ -1,15 +1,13 @@
 @model List<Employee>
 
-@{
-  ViewData["Title"] = "Employee Home";
-}
 
-<h1>Displying all employees...</h1>
 
-<table class="table">
-  <thead class="thead-dark">
+<h1>Displaying all employees...</h1>
+
+<table class="table table-striped table-dark">
+  <thead>
     <tr>
-      <th scope="col">#</th>
+      
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Address</th>
@@ -17,17 +15,18 @@
       <th scope="col">Salary</th>
     </tr>
   </thead>
-  <tbody>   
-    @for (int i = 0; i < Model.Count; i++)
+  <tbody>
+    @foreach (var employee in Model)
     {
-        <tr>
-          <td>@(i+1)</td>
-          <td>@Model[i].FirstName</td>
-          <td>@Model[i].Surname</td>
-          <td>@Model[i].Address</td>
-          <td>@Model[i].Gender</td>
-          <td>@Model[i].Salary</td>
-        </tr>
+       <tr>
+         <td>
+           <td>@employee.FirstName</td>
+           <td>@employee.Surname</td>
+           <td>@employee.Address</td>
+           <td>@employee.Gender</td>
+           <td>@employee.Salary</td>
+         </td>
+       </tr>  
     }
   </tbody>
 </table>
