@@ -9,187 +9,184 @@ namespace ParallelAndAsync
     {
         static void Main1()
         {
-            // TPL - Task Parallel Library
+            // // Multi Threading
+            // Thread thread = new Thread();
 
-            int[] numbers = { 23, 45, 12, 56, 78, 43, 54, 65, 32, 21 };
+            // // TPL - Task Parallel Library
+            int[] numbers = { 34, 43, 8, 23, 7, 8, 324, 673, 235, 798, 65 };
+
             Stopwatch stopwatch = new Stopwatch();
-            //Sequential
+
+            // Sequential
             stopwatch.Start();
             foreach (var num in numbers)
             {
                 Compute(num);
             }
-            Console.WriteLine($"Time taken (Sequential): {stopwatch.ElapsedMilliseconds} ms");
+            Console.WriteLine($"Time taken (Sequential): {stopwatch.ElapsedMilliseconds}ms");
 
-            // Parallel
+            // 
             stopwatch.Restart();
             Parallel.ForEach(numbers, num =>
             {
                 Compute(num);
+
             });
-            Console.WriteLine($"Time taken (Parallel): {stopwatch.ElapsedMilliseconds} ms");
+            Console.WriteLine($"Time taken (Parallel): {stopwatch.ElapsedMilliseconds}ms");
+
 
         }
+
+
+
         static void Compute(int x)
         {
-            Thread.Sleep(100);
+            Task.Delay(100);
             Console.WriteLine($"Computed for {x}");
-        }
-
-        static void Main2()
-        {
-            // Example : Making breakfast
-
-            // Make Tea
-            //-Turn on burner (2s)
-            //-Put on kettle (1s)
-            //-Add water (2s)
-            //-Boil it (3min)
-            //-Grid teas masala (10s)
-            //-Add sugar and masalas (2s)
-            //-Add milk (2s)
-            //-Boil it (2min)
-
-            // Fry eggs
-            //-Turn on burner (2s)
-            //-Put on pan (1s)
-            //-Add oil (2s)
-            //-Crack eggs and stir it (2min)
-            //-Fry it (1min)
-
-            // Everything ready: Serve it
-
-            // Sequetial
-            TurnOnBurner().Wait();
-            Console.WriteLine("Burner1 turned on.");
-
-            PutOn("Kettle").Wait();
-            Console.WriteLine("Put kettle on burner.");
-
-            Add("Water").Wait();
-            Console.WriteLine("Added water on kettle.");
-
-            Boil("Water").Wait();
-            Console.WriteLine("Water boiled.");
-
-            GrindTeaMasala().Wait();
-            Console.WriteLine("Grinded tea masala.");
-
-            Add("Sugar").Wait();
-            Console.WriteLine("Added sugar.");
-
-            Add("Masala").Wait();
-            Console.WriteLine("Added masala.");
-
-            Add("Milk").Wait();
-            Console.WriteLine("Added milk.");
-
-            Boil("Milk").Wait();
-            Console.WriteLine("Boiled milk.");
-
-            TurnOnBurner().Wait();
-            Console.WriteLine("Burner2 turned on.");
-
-            PutOn("Pan").Wait();
-            Console.WriteLine("Put on pan.");
-
-            Add("Oil").Wait();
-            Console.WriteLine("Added oil.");
-
-            CrackAndStirEggs().Wait();
-            Console.WriteLine("Cracked and stirred eggs");
-
-            FryEggs().Wait();
-            Console.WriteLine("Fried eggs");
-
-            Serve().Wait();
-            Console.WriteLine("Served breakfast");
-            
         }
 
         static async Task Main()
         {
             Stopwatch sw = Stopwatch.StartNew();
-            
-            var turnBurner1 = TurnOnBurner();
-            var putKettle = PutOn("Kettle");
-            var addWater = Add("Water");
-            var boilWater = Boil("Water");
-            var grindMasala = GrindTeaMasala();
-            var addSugar = Add("Sugar");
-            var addMasala = Add("Masala");
-            var addMilk = Add("Milk");
-            var boilMilk = Boil("Milk");
-            var turnBurner2 = TurnOnBurner();
-            var putPan = PutOn("Pan");
-            var addOil = Add("Oil");
-            var crackAndStirEggs = CrackAndStirEggs();
-            var fryEggs = FryEggs();
-            var serve = Serve();
+            Task turnOnBurner1 = TurnOnBurner();
+            Task putOnKettle = PutOn("Kettle");
+            Task addWater = Add("Water");
+            Task boilWater = Boil("Water");
+            Task grindTeaMasala = GrindTeaMasala();
+            Task addSugar = Add("Sugar");
+            Task addMasala = Add("Masala");
+            Task addMilk = Add("Milk");
+            Task boilMilk = Boil("Milk");
+            Task turnOnBurner2 = TurnOnBurner();
+            Task putOnPan = PutOn("Pan");
+            Task addOil = Add("Oil");
+            Task crackEggsAndStir = CrackAndStirEggs();
+            Task fryEggs = FryEggs();
+            Task serve = Serve();
 
-            
-            await turnBurner1;
-            Console.WriteLine("Burner1 turned on.");
+            await turnOnBurner1;
+            Console.WriteLine("Burner1 turned on");
 
-            await putKettle;
-            Console.WriteLine("Put kettle on burner.");
+            await putOnKettle;
+            Console.WriteLine("Put Kettle on Burner");
 
             await addWater;
-            Console.WriteLine("Added water on kettle.");
+            Console.WriteLine("Added Water on Kettle");
 
             await boilWater;
-            Console.WriteLine("Water boiled.");
+            Console.WriteLine("Water Boiled");
 
-            await grindMasala;
-            Console.WriteLine("Grinded tea masala.");
+            await grindTeaMasala;
+            Console.WriteLine("Grinded Tea Masala");
 
             await addSugar;
-            Console.WriteLine("Added sugar.");
+            Console.WriteLine("Sugar Added");
 
             await addMasala;
-            Console.WriteLine("Added masala.");
+            Console.WriteLine("Masala Added");
 
             await addMilk;
-            Console.WriteLine("Added milk.");
+            Console.WriteLine("Milk Added");
 
             await boilMilk;
-            Console.WriteLine("Boiled milk.");
+            Console.WriteLine("Milk Boiled");
 
-            await turnBurner2;
-            Console.WriteLine("Burner2 turned on.");
+            await turnOnBurner2;
+            Console.WriteLine("Burner2 turned on");
 
-            await putPan;
-            Console.WriteLine("Put on pan.");
+            await putOnPan;
+            Console.WriteLine("Put Pan on Burner");
 
-            await addOil;
-            Console.WriteLine("Added oil.");
+            await addOil; ;
+            Console.WriteLine("Added Oil");
 
-            await crackAndStirEggs;
+            await crackEggsAndStir;
             Console.WriteLine("Cracked and stirred eggs");
 
             await fryEggs;
-            Console.WriteLine("Fried eggs");
+
+            Console.WriteLine("Eggs Fried");
 
             await serve;
-            Console.WriteLine("Served breakfast");
+            Console.WriteLine(" Breakfast Served");
 
-            Console.WriteLine($"Time taken (Parallel): {sw.ElapsedMilliseconds} ms");
+             Console.WriteLine($"Time taken (Parallel): {sw.ElapsedMilliseconds}ms");
 
         }
-
-        private static async Task Serve()
+        static void Main2()
         {
-            await Task.Delay(5000);
-        }
+            // Making Breakfast
 
-        private static async Task FryEggs()
-        {
-            await Task.Delay(10000);
-        }
+            // Make Tea
+            // Turn on Burner(2s)
+            // Put on kettle(1s)
+            // Add water (2s)
+            // Boil it(3 min)
+            // Grind tea masala(10s)
+            // Add sugar and masalas(2s)
+            // Add Milk(2s)
+            // Boil it(2min)
 
-        private static async Task CrackAndStirEggs()
-        {
-            await Task.Delay(10000);
+            // Fry eggs
+            // Turn on Burner(2s)
+            // Put on pan(1s)
+            // Add oil (2s)
+            // Crack eggs stir it(2 min)
+            // Fry it(10s)
+
+            // Everything ready Serve it
+
+            // Sequential
+            TurnOnBurner();
+            Console.WriteLine("Burner1 turned on");
+
+            PutOn("Kettle");
+            Console.WriteLine("Put Kettle on Burner");
+
+            Add("Water");
+            Console.WriteLine("Added Water on Kettle");
+
+            Boil("Water");
+            Console.WriteLine("Water Boiled");
+
+            GrindTeaMasala();
+            Console.WriteLine("Grinded Tea Masala");
+
+            Add("Sugar");
+            Console.WriteLine("Sugar and masala added");
+
+            Add("Masala");
+            Console.WriteLine("Masala Added");
+
+            Add("Milk");
+            Console.WriteLine("Milk Added");
+
+            Boil("Milk");
+            Console.WriteLine("Milk Boiled");
+
+            TurnOnBurner();
+            Console.WriteLine("Burner2 turned on");
+
+            PutOn("Pan");
+            Console.WriteLine("Put Pan on Burner");
+
+            Add("Oil");
+            Console.WriteLine("Added Oil");
+
+            CrackAndStirEggs();
+            Console.WriteLine("Cracked and stirred eggs");
+
+            FryEggs();
+
+            Console.WriteLine("Eggs Fried");
+
+            Serve();
+            Console.WriteLine(" Breakfast Served");
+
+
+
+
+
         }
 
         private static async Task PutOn(string pot)
@@ -201,7 +198,6 @@ namespace ParallelAndAsync
         {
             await Task.Delay(2000);
         }
-
         private static async Task Add(string item)
         {
             await Task.Delay(2000);
@@ -217,5 +213,19 @@ namespace ParallelAndAsync
             await Task.Delay(10000);
         }
 
+        private static async Task CrackAndStirEggs()
+        {
+            await Task.Delay(10000);
+        }
+
+        private static async Task FryEggs()
+        {
+            await Task.Delay(10000);
+        }
+
+        private static async Task Serve()
+        {
+            await Task.Delay(5000);
+        }
     }
 }

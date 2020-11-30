@@ -1,23 +1,23 @@
-using SelectAndLoop;
+
 
 enum Complexity
 {
     Easy,
-    Noraml,
+    Normal,
     Hard
 }
 
 internal class EnumDemo
-{    
-    void UseEnums()
+{
+    void UserEnums()
     {
-        SelectionStatement select;
+        // SelectionStatement select;
 
         Complexity complexity = Complexity.Easy;
         
-        if(complexity == Complexity.Noraml)
+        if(complexity == Complexity.Normal)
         {
-
+            
         }
     }
-} 
+}

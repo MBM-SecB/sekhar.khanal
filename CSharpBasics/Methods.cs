@@ -1,76 +1,47 @@
 using System;
-
 public class MethodTeacher
 {
-    // Simple-method:  takes 2 arguemnts, and returns a value
-    public int Multiply(int firstNum, int secondNum)
-    {
-        int result = firstNum * secondNum;
-        return result;
-    }
-
-    // Generic method
-    public void Multiply<T>(T firstNum, T secondNum)
-    {
-        
-    }
-
-    // Variable-number of arguments
-    public int Multiply(params int[] numbers)
-    {
-        int product = 1;
-        foreach (int num in numbers)
+        public int Multiply(int  firstNum, int secondNum)
         {
-            product = product * num;
+            int result = firstNum * secondNum;
+            return result;
         }
 
-        return product;
-    }
 
-    // Named-agruments
-    internal void PrintCustomerDetails(string name, byte age, string address, DateTime dob)
-    {
-        // Using string interpolation here: $"{}"
-        Console.Write($"Customer Details: {name}, {age}, {address}, {dob}");
-    }
-
-    // Returning multiple value
-    // Question1: Method which returns max and min value of supplied numbers
-    internal (int, int) FindMinMax(params int[] numbers)
-    {
-        int min = numbers[0];
-        int max = numbers[0];
-
-        foreach (int num in numbers)
+            // Generic Method
+        public void Multiply<T>(T firstNum, T secondNum)
         {
-            if (num < min)
-                min = num;
-            if (num > max)
-                max = num;
+            
         }
 
-        return (min, max);
-    }
+        // Variable numbers of arguments
+        public int Multiply(params int[] numbers)
+        {
+            int product=1;
+            foreach(int num in  numbers)
+            {
+                product = product * num;
+            }
+            return product;
+        }
+        // Named arguments
+        void PrintCustomerDetails(string name, byte age,string adress, DateTime dob)
+        {
+            Console.Write("");
+        }
 
-
+    
 }
-
 public class MethodTester
-{
-    void TestMethods()
     {
-        MethodTeacher methodTeacher = new MethodTeacher();
-        int product = methodTeacher.Multiply(2345, 56483);
+        void TestMethods()
+        {
+            MethodTeacher methodTeacher  = new MethodTeacher();
+            int product  = methodTeacher.Multiply(2345,5678);
 
-        methodTeacher.Multiply<decimal>(234.54m, 345678.234566m);
+            methodTeacher.Multiply<decimal>(234.343m,34.73546m);
 
-        product = methodTeacher.Multiply(344, 56767, 233, 55667);
-        product = methodTeacher.Multiply(344, 56767, 233, 55667, 345, 123, 45);
+            product = methodTeacher.Multiply(45,876,234,652);
 
-        methodTeacher.PrintCustomerDetails(dob: DateTime.Now, name: "Bishnu", age: 34, address: "");
-
-        (int Min, int Max) result = methodTeacher.FindMinMax(2, 3, 4, 5, 6, 12, 34, 23, 45, 67, 445, 32);
-
-        Console.WriteLine($"Minimum: {result.Min}, Maximum: {result.Max}");
+        }
     }
-}

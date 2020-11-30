@@ -34,6 +34,11 @@ namespace WebAppEmpty
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
+
+                endpoints.MapGet("/greetme", async context =>
+                {
+                    await context.Response.WriteAsync("Hello Azyt");
+                });
             });
         }
     }

@@ -1,27 +1,26 @@
 class Person
 {
-    private int age = 23;
-    internal string name = "Ramesh";
+    public int age = 23;
+    internal string name = "Azyt";
 
-    // Auto-implemented property
-    public string Name { get; set; }
 
-    // Read-only property
-    public string Address { get; }
+    public string Name {get;set;}
 
-    // Getter-setter
-    public int Age 
-    {
+    public string Address {get;}
+
+    public int Age
+     {
         get
         {
             return age;
-        } 
+        }
         set
         {
-            if(value > 20 && value < 30)
+            if(value>20 && value <30)
             {
                 age = value;
             }
         }
-    } 
+        }
+
 }

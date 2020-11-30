@@ -1,36 +1,25 @@
-﻿using System;
+using System;
+
 class Program
 {
-    static void Main123123()
+    static void Main()
     {
-        //1. Value types
-        //1.1 Numbers
-        //1.1.1 Integers
 
-        // byte myAge = 255;
-        // short b = 32454;
-        // int c = 324242;
-        // long d = 23423424224;
+        // #####Inheritance#####
+        // var square1 = new Square(side: 5.9);
+        // var square2 = new Square(side: 15.9);
+        // var rect1 = new Rectangle(length: 5.9, breadth: 10.5);
 
-        // //1.1.2 Floating point        
-        // float e = 34232.45423423424223424f;
-        // double f = 3434.345353;
-        // decimal g = 2342.32454543599999997773m;
+        // var x = square1.GetArea();
+        // var y = square2.GetArea();
 
-        // //1.2 Char type
-        // char h = 'h';
 
-        // //1.3 Boolean
-        // bool i = true;
+        // var z = rect1.GetArea();
 
-        // //2. Reference Types
-        // string j = "sdfsf";
-        // object k = 3432423.34;     
-        // Program l;   
-    }
+        // Console.WriteLine($"Area:{x}");
 
-    (int, string) GetName(int x, float y)
-    { 
-        return (234223, "dfsfsf");
+
+        FileIO file = new FileIO();
+        file.LearnDirectory();
     }
 }

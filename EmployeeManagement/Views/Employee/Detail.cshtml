@@ -1,11 +1,18 @@
 @model Employee
 
-<h1>Employee Detail</h1>
 
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">First Name : @Model.FirstName</li>
-  <li class="list-group-item">Sur Name : @Model.Surname</li>
-  <li class="list-group-item">Address : @Model.Address</li>
-  <li class="list-group-item">Gender : @Model.Gender</li>
-  <li class="list-group-item">Salary : @Model.Salary</li>
+@{
+  ViewData["Title"] = @Model.FirstName + " " +  @Model.LastName;
+}
+<h1>Employee Details <a href="/employee/index">Go Back</a></h1>
+<ul class="list-group">
+
+  
+  <li class="list-group-item list-group-item-primary">First Name: @Model.FirstName</li>
+  <li class="list-group-item list-group-item-secondary">Last Name: @Model.LastName</li>
+  <li class="list-group-item list-group-item-success">Address: @Model.Address</li>
+  <li class="list-group-item list-group-item-danger">Gender: @Model.Gender</li>
+  <li class="list-group-item list-group-item-warning">Salary: @Model.Salary</li>
+
+  
 </ul>

@@ -1,36 +1,28 @@
-using System;
 using System.Collections.Generic;
-
+using System;
 namespace LearningClasses
 {
     public class Generic
     {
-        void LearningList()
+        void learningList()
         {
-            List<string> names = new List<string> { "Bishnu Rawal" };
+            List<string> names = new List<string>();
+            names.Add("Ajit");
+            names.Add("Ajit");
+            names.Add("Ajit");
+            names.Add("Ajit");
 
-            names.Add("Bishnu Rawal");
-            names.Add("Bishnu Rawal");
-            names.Add("Bishnu Rawal");
-            names.Add("Bishnu Rawal");            
-
-            foreach (string name in names)
+            foreach(string name in names)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(name); 
             }
         }
 
         void LearningDictionary()
         {
-            Dictionary<string, string> countryCapitals = new Dictionary<string, string>();
-
-            countryCapitals.Add("Nepal", "Kathmandu");
-            countryCapitals.Add("India", "Delhi");
-
-            foreach (var countryCapital in countryCapitals)
-            {
-                Console.WriteLine(countryCapital.Value);
-            }
+            
         }
+
+
     }
 }

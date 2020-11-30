@@ -2,34 +2,41 @@ namespace LearningClasses
 {
     public class Country
     {
-        public string Name { get; set; }
-        public int Population { get; set; }
+        public string Name {get;set;}
+
+        public int Population {get; set; }
+
+        public static readonly bool isOnEarth;
 
         // Default constructor - parameter less
         public Country()
         {
-
+            
         }
 
-        // Parameterized contructor
-        public Country(string name)
-        {
-            Name = name;
-        }
-
-        public Country(string name, int population)
+        public Country(string name,int population)
         {
             Name = name;
             Population = population;
         }
+        static Country()
+        {
+            isOnEarth = true;
+        }
+
+        
     }
 
     public class Demo
     {
         void DoSomething()
         {
-            Country country1 = new Country();   
-            Country country2 = new Country("Nepal");                     
+
+            Country country1 = new Country();
+            var x = Country.isOnEarth;
+            // Country country2 = new Country("Nepal");
+            
         }
+        
     }
 }

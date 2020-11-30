@@ -1,59 +1,63 @@
 using System;
 
-namespace SelectAndLoop
+
+class SelectionStatement
 {
-    class SelectionStatement
+
+    static void Main2()
     {
-        static void Main234()
+        SelectionStatement s = new SelectionStatement();
+        // s.CheckNumber();
+        s.CheckNumber();
+    }
+    void CheckNumber(){
+        Console.Write("Enter number: ");
+        string input = Console.ReadLine();
+
+        int number = int.Parse(input);
+
+        if((number % 2) ==0)
         {
-            SelectionStatement s = new SelectionStatement();
-            s.LearnSwitchStatements();
+            Console.WriteLine("Your entered number is Even");
+        }
+        else
+        {
+            Console.WriteLine("Your entered number is Odd");
+        }
+    }
+
+    void LearnSwitchStatements()
+    {
+        Console.Write("Enter your hobby: ");
+        string input = Console.ReadLine();
+
+        switch(input)
+        {
+            case "books":
+            Console.Write("Books");
+            break;
+
+            case "football":
+            Console.Write("football");
+            break;
+
+            case "swimming":
+            Console.Write("swimming");
+            break;
+
+            case "puzzle":
+            Console.Write("puzzle");
+            break;
+
+            case "sports":
+            Console.Write("sports");
+            break;
+
+            default:
+            Console.Write("You poor man without a hobby");
+            break;
+
         }
 
-        void CheckNumber()
-        {
-            Console.Write("Enter number: ");
-            string input = Console.ReadLine();
-
-            int number = int.Parse(input);
-
-            if ((number & 1) == 0)
-            {
-                Console.WriteLine("You entered EVEN number.");
-            }
-            else
-            {
-                Console.WriteLine("You entered ODD number.");
-            }
-        }
-
-        void LearnSwitchStatements()
-        {
-            Console.Write("Enter your hobby: ");
-            string input = Console.ReadLine();
-
-            switch (input)
-            {
-                case "books":
-                    Console.WriteLine("That's great, you must be a great learner.");
-                    break;
-
-                case "badminton":
-                    Console.WriteLine("Wow, badminton is great indoor game for excercise.");
-                    break;
-
-                case "swimming":
-                    Console.WriteLine("You are in love with water?");
-                    break;
-
-                case "teaching":
-                    Console.WriteLine("That's a rare hobby :)");
-                    break;
-
-                default:
-                    Console.WriteLine("You like nothing? that's strange.");
-                    break;
-            }
-        }
     }
 }
