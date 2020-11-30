@@ -28,10 +28,10 @@ public class Employee
     {
         var employee1 = new Employee()
         {
-            FirstName = "Random",
-            LastName = "Guy",
-            Address = "NoLand",
-            Salary = 00000
+            FirstName = "muna",
+            LastName = "madan",
+            Address = "lasa",
+            Salary = 500000
 
         };
         var employee2 = new Employee { FirstName = "sekhar", LastName = "khanal", Address = "Ktm", Salary = 50000 };
