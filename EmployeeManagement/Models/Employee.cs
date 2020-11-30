@@ -34,11 +34,11 @@ public class Employee
             Salary = 00000
 
         };
-        var employee2 = new Employee { FirstName = "Mark", LastName = "Pa", Address = "Ktm", Salary = 50000 };
-        var employee3 = new Employee { FirstName = "Azyt", LastName = "Pan", Address = "lalitpur", Salary = 30000 };
-        var employee4 = new Employee { FirstName = "Ajit", LastName = "Pand", Address = "bhaktapur", Salary = 15000 };
-        var employee5 = new Employee { FirstName = "Azit", LastName = "Pande", Address = "hetauda", Salary = 4500 };
-        var employee6 = new Employee { FirstName = "Ajeet", LastName = "Pandey", Address = "bhalubang", Salary = 21000 };
+        var employee2 = new Employee { FirstName = "sekhar", LastName = "khanal", Address = "Ktm", Salary = 50000 };
+        var employee3 = new Employee { FirstName = "abc", LastName = "mno", Address = "lalitpur", Salary = 30000 };
+        var employee4 = new Employee { FirstName = "def", LastName = "pqr", Address = "btl", Salary = 15000 };
+        var employee5 = new Employee { FirstName = "ghi", LastName = "stu", Address = "bktr", Salary = 4500 };
+        var employee6 = new Employee { FirstName = "jkl", LastName = "vwxyz", Address = "dang", Salary = 21000 };
 
         var employees = new List<Employee> { employee1, employee2, employee3, employee4, employee5, employee6 };
         return employees;
