@@ -44,6 +44,8 @@
             <td>@Model[i].Address</td>
             <td>@Model[i].Gender</td>
             <td>@Model[i].Salary</td> 
+
+            <td><a class="btn btn-outline-primary" href="/Employee/Edit?id-@Model[i].Id">Edit</a></td>
             <form asp-controller="Employee" asp-action="Delete" asp-route-id="@Model[i].Id" method = "POST">
             <td>
               <input type="submit" value="Delete">

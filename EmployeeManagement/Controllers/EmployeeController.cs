@@ -46,4 +46,19 @@ public class EmployeeController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    public ActionResult Edit(int id)
+    {
+        var employee = db.Employees.Find(id);
+        return View(employee);
+    }
+
+
+      public ActionResult Edit(Employee employee)
+    {
+        
+        db.Employees.Update(employee);
+        db.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
 }
