@@ -348,3 +348,25 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+*.cache
+
+*.dll
+
+*.pdb
+
+bin/
+
+obj/
+CSharpBasics/bin/Debug/netcoreapp3.1/CSharpBasics.dll
+CSharpBasics/bin/Debug/netcoreapp3.1/CSharpBasics.dll
+CSharpBasics/obj/Debug/netcoreapp3.1/CSharpBasics.dll
+CSharpBasics/obj/Debug/netcoreapp3.1/CSharpBasics.pdb
+CSharpBasics/bin/Debug/netcoreapp3.1/CSharpBasics.pdb
+CSharpBasics/obj/Debug/netcoreapp3.1/CSharpBasics.assets.cache
+CSharpBasics/obj/Debug/netcoreapp3.1/CSharpBasics.assets.cache
+CSharpBasics/obj/Debug/netcoreapp3.1/CSharpBasics.csprojAssemblyReference.cache
+Assignment2/obj/Debug/netcoreapp3.1/Assignment2.assets.cache
+Assignment2/obj/Debug/netcoreapp3.1/Assignment2.csprojAssemblyReference.cache
+Assignment2/obj/Debug/netcoreapp3.1/Assignment2.assets.cache
+Assignment2/obj/Debug/netcoreapp3.1/Assignment2.csprojAssemblyReference.cache

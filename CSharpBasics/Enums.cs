@@ -1,4 +1,4 @@
-
+using SelectAndLoop;
 
 enum Complexity
 {
@@ -7,17 +7,19 @@ enum Complexity
     Hard
 }
 
+//namespace is container of class
+
 internal class EnumDemo
 {
-    void UserEnums()
+    void UseEnums()
     {
-        // SelectionStatement select;
+        SelectionStatement select;
 
-        Complexity complexity = Complexity.Easy;
-        
-        if(complexity == Complexity.Normal)
+        Complexity complexity=Complexity.Easy;
+
+        if(complexity==Complexity.Normal)
         {
-            
+
         }
     }
-}
+} 

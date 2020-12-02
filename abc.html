@@ -1,26 +1,22 @@
-<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is just a plain text</title>
+    </head>
+    <body>
+        <h1>Hi there</h1>
+        <pre>
+            static void Main()
+            {
+                Ques1 s=new Ques1();
+                Console.WriteLine("enter first number :");
+                int num1=int.Parse(Console.ReadLine());
 
-<head>
-    <title>This a simple webpage</title>
-</head>
+                Console.WriteLine("enter second number :");
+                int num2=int.Parse(Console.ReadLine());
 
-<body>
-    <h1>This is heading 1</h1>
-    <pre>This is pre tag
-        A
-        AJ
-        AJI
-        AJIT
-        AJIT-
-        AJIT-P
-        AJIT-PA
-        AJIT-PAN
-        AJIT-PAND
-        AJIT-PANDE
-        AJIT-PANDEY
-    </pre>
-
-
-</body>
-
+                bool result = s.Sum(num1,num2);
+                Console.WriteLine(result);
+            }
+        </pre>
+    </body>
 </html>

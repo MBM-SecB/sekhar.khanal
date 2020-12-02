@@ -2,114 +2,122 @@
 using System.Linq;
 using System.Collections.Generic;
 
-
-class Program
+namespace LINQ
 {
-    static void Main()
+    class Program
     {
-        //LINQ-- Language INtegrated Query
-
-        int[] numbers = { 14, 745, 67, 34, 97, 48, 12, 39, 23, 582, 190 };
-
-        // Methos Syntax
-        var result1 = numbers.Where(num => num > 50).Select(num => num);
-
-        // Query expression syntax
-        var result2 = from num in numbers
-                      where num > 50
-                      select num;
-
-        // Restrcitions -where
-        var result3 = from num in numbers
-                      where num > 50 & num < 70
-                      select num;
-
-        // Projections - select
-        var result4 = from num in numbers
-                      where num % 2 == 0
-                      select num * num;
-
-        // Ordering --orderby
-        var result5 = from num in numbers
-                      orderby num descending
-                      select num;
-
-        // Partitioning -- take, skip
-        var result6 = numbers.Skip(5).Take(5);
-
-
-        var result7 = numbers.Any(num => num % 2 == 0);
-        var result8 = numbers.All(num => num % 2 == 0);
-        var result29 = numbers.Contains(23);
-
-        // // Genrations
-
-        var result10 = Enumerable.Range(1, 1000);
-        var result11 = Enumerable.Repeat("Hello Wolrd!", 20);
-
-
-        void LearnLinqOnComplexCollection()
+        static void Main()
         {
-            Country c1 = new Country("Nepal", "Kathmandu", "Asia", 1234567);
-            Country c2 = new Country("India", "New Delhi", "Asia", 5746563, DateTime.Parse("1947/11/1"));
-            Country c3 = new Country("Bhutan", "Thimpu", "Asia", 454564, DateTime.Parse("1947/11/1"));
-            Country c5 = new Country("Afganistan", "Kabul", "Asia", 300000, DateTime.Parse("1947/11/1"));
-            Country c6 = new Country("England", "GB", "Europe", 54324564);
-            Country c7 = new Country("Russia", "Moscow", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c8 = new Country("Albania", "Mariehamn", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c9 = new Country("Belgium", "Brussels", "Europe", 440000, DateTime.Parse("1947/11/1"));
-            Country c10 = new Country("Denmark", "Copenhagen", "Europe", 400000, DateTime.Parse("1947/11/1"));
-            Country c11 = new Country("Finland", "Helsinki", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c12 = new Country("Germany", "Berlin", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c13 = new Country("France", "Paris", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c14 = new Country("Italy", "Rome", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c15 = new Country("Netherlands", "Amsterdam", "Europe", 450000, DateTime.Parse("1947/11/1"));
-            Country c16 = new Country("Poland", "Warsaw", "Europe", 54324564, DateTime.Parse("1947/11/1"));
-            Country c17 = new Country("Nigeria", "Abuja", "Africa", 54324564, DateTime.Parse("1947/11/1"));
-            Country c18 = new Country("Ghana", "Accra", "Africa", 54324564, DateTime.Parse("1947/11/1"));
-            Country c19 = new Country("Eritrea", "Asmara", "Africa", 54324564, DateTime.Parse("1947/11/1"));
-            Country c20 = new Country("South Sudan", "Juba", "Africa", 54324564, DateTime.Parse("1947/11/1"));
-            Country c21 = new Country("Morocco", "Rabat", "Africa", 54324564, DateTime.Parse("1947/11/1"));
-            Country c22 = new Country("China", "Beijing", "Asia", 54324564, DateTime.Parse("1947/11/1"));
-            Country c23 = new Country("Pakistan", "Islamabad", "Asia", 54324564, DateTime.Parse("1947/11/1"));
+            //LINQ - Language Integrated Query
 
-            var countries = new List<Country> {c1,c2,c3,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23};
+            int[] numbers = {46,11,23,53,65,25,655,89,78,45,34};
 
+            // Method syntax
+            var result1 = numbers.Where(num => num > 50).Select(num => num);
 
-            // List all asian country names
-            var result12 = from country in countries
-                           where country.Continent == "Asia"
-                           select country.Name;
+            // Query expression syntax
+            var result2 = from num in numbers
+                            where num > 50
+                            select num;
 
-            // List all asian Countries which are never been invaded
-            var result13 = from country in countries
-                           where country.IndependenceDay == default
-                           select country.Name;
+            // Restrictions - where
+            var result3 = from num in numbers
+                            where num > 50 && num<70
+                            select num;
 
-            var result14 = from country in countries
-                           where country.Population<500000 & country.Continent =="Europe"
-                           select country.Name;
-            Console.WriteLine("Countries that has never been invaded are: ");
-            foreach (var name in result13)
-            {
-                
-                Console.WriteLine(name);
-            }
+            // Projections - select
+            var result4 = from num in numbers
+                            where num % 2 == 0
+                            select num * num;
 
-            Console.WriteLine("Europian countries that has population less than 500k are: ");
-            foreach (var name in result14)
-            {
-                
-                Console.WriteLine(name);
-            }
+            // Ordering - orderby, orderby descending
+            var result5 = from num in numbers
+                            orderby num descending
+                            select num;
 
+            // Partitioning : take, skip
 
-            // List all europian countries in ascending order that has population less than 500k
-            // COuntries never been invaded
+            //takes first 5
+            var resulta = numbers.Take(5);
+
+            //first 5 paxadi ko linxa
+            var result6 = numbers.Skip(5).Take(5);
+
+            // Quantifiers : any, all, contains
+            var result7 = numbers.Any(x => x % 2 == 0);
+
+            var result8 = numbers.All(x => x % 2 == 0);
+            
+            var result9 = numbers.Contains(46);
+
+            // Generations
+            var result10 = Enumerable.Range(1, 1000);
+
+            var result11 = Enumerable.Repeat("Hello World", 20);
+
+            Program a = new Program();
+            a.LearnLINQOnComplexCollection();
 
         }
-        LearnLinqOnComplexCollection();
 
+        void LearnLINQOnComplexCollection()
+        {
+            Country c1 = new Country("Nepal", "Kathmandu", "Asia", 561246877);
+            Country c2 = new Country("India", "Delhi", "Asia", 5616235467877, DateTime.Parse("1947/11/1"));
+            Country c3 = new Country("England", "GB", "Europe", 3748565877);
+            Country c4 = new Country("Bhutan", "Thimpu", "Asia", 246877);
+            Country c5 = new Country("Russia", "Mosco", "Europe", 56877, DateTime.Parse("1937/12/1"));
+            Country c6 = new Country("Australia", "Canberra", "Australia", 123561246877, DateTime.Parse("1907/4/1"));
+            Country c7 = new Country("China", "Beijing", "Asia", 5324561246877);
+            Country c8 = new Country("Greenland", "Nuuk", "Antartica", 98657561246877);
+            Country c9 = new Country("Bangladesh", "Dhaka", "Asia", 53561246877, DateTime.Parse("1945/4/15"));
+            Country c10 = new Country("Pakistan", "Islamabaad", "Asia", 566877, DateTime.Parse("1967/5/1"));
+            Country c11 = new Country("Maldives", "Male", "Asia", 5687541246877, DateTime.Parse("1908/4/1"));
+            Country c12 = new Country("Canada", "Ottawa", "North America", 5246877);
+            Country c13 = new Country("US", "Wasington DC", "North America", 456561246877, DateTime.Parse("1923/4/11"));
+            Country c14 = new Country("Newzealand", "Wellington", "Oceania", 56128777);
+            Country c15 = new Country("Norway", "Oslo", "Europe", 36565);
+            Country c16 = new Country("Egypt", "Cairo", "Africa", 2653531246877);
+            Country c17 = new Country("Nygeria", "Abuja", "Africa", 5742346877, DateTime.Parse("1957/9/18"));
+            Country c18 = new Country("Germany", "Berlin", "Europe", 51237);
+            Country c19 = new Country("France", "Paris", "Europe", 46237);
+            Country c20 = new Country("Italy", "Rome", "Europe", 3625656877, DateTime.Parse("1997/9/16"));
+
+
+
+
+
+            List<Country> countries = new List<Country> {c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20};
+
+            //List all asian country names
+            var result1= from country in countries
+                            where country.Continent == "Asia"
+                            select country.Name;
+
+            // HW - List all asian country names which are never been invaded
+            var result2 = from country in countries
+                            where country.Continent == "Asia" && country.IndependanceDay == default
+                            select country.Name;
+            
+            Console.WriteLine("Asian Countries");
+            foreach (var item in result2)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            // HW - List all europian countries in ascending order that has population less than 500k
+            var result3 = from country in countries
+                            where country.Continent == "Europe" && country.Population<500000
+                            orderby country.Population
+                            select country;
+
+            Console.WriteLine("Europian Countries");
+            foreach (var item in result3)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+        }
     }
 }
-

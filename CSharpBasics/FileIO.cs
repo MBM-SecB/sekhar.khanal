@@ -1,50 +1,70 @@
-using System.IO;
 using System;
+using System.IO;
 
 public class FileIO
 {
     public void LearnFileReading()
     {
-        string filePath = @"E:\ajit_pandey\README.md";
-        string fileInProject = "generics.cs";
+        string filePath = @"D:\Computer Science\.NET Centric Computing\Lab\Bishnu.Rawal\README.md";
+        string fileWithInProject = "Generics.cs";
 
-        if (File.Exists(filePath))
+        bool isFileThere = File.Exists(fileWithInProject);
+
+        if (isFileThere)
         {
-            var fileContent = File.ReadAllText(fileInProject);
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            var fileContent = File.ReadAllText(fileWithInProject);
             Console.WriteLine(fileContent);
         }
     }
+
     public void LearnFileWriting()
     {
         string filePath = "Abc.txt";
-        File.WriteAllText(filePath,"Hello World!");
-
+        File.WriteAllText(filePath, "This is random file content.");
     }
 
     public void LearnFileInfo()
     {
         string filePath = "Abc.txt";
-        FileInfo fileInfo  = new FileInfo(filePath);
-        var fileSize =fileInfo.Length;
-        var createdDate = fileInfo.CreationTime;
+        FileInfo fileInfo = new FileInfo(filePath);
+
+        var size = fileInfo.Length;
+        var createDate = fileInfo.CreationTime;
 
         Console.WriteLine(filePath);
-        Console.WriteLine("Size: "+ fileSize  + " bytes");
-        Console.WriteLine("Created Date: "+createdDate);
+        Console.WriteLine($"Size: {size} bytes");
+        Console.WriteLine($"Created: {createDate}");
     }
+
     public void LearnDirectory()
     {
-        string folderPath = "ABC";
+        string folderPath = "MBM";
         Directory.CreateDirectory(folderPath);
+
         Console.WriteLine("Do you want to delete MBM folder?");
         string confirm = Console.ReadLine();
-        if(confirm == "Y")
+        if (confirm == "Y")
         {
             Directory.Delete(folderPath);
         }
+    }
 
-        // HW: Create a folder "Nepal", within that folder create 10 sub folders.
-        // Every subfolder should contain a file Test.txt with subfolder name as content.
+    // HW: Create a folder "Nepal", with in that create 10 sub folders. Every
+    // subfolders should contain a file Test.txt with subfolder name as a content. 
+
+    public void FileIoAssignment()
+    {
+        string rootFolderPath = "Nepal";
+        string[] subFolderNames = { "Jhapa", "Morang", "Sunsari", "Ilam", "Pokhara", "Kathmandu", "Kaski", "Lalitpur", "Bhaktapur", "Jumla" };
+        Directory.CreateDirectory(rootFolderPath);
+
+        foreach (string subfolderName in subFolderNames)
+        {
+            Directory.CreateDirectory($"{rootFolderPath}/{subfolderName}");
+            string filePath = $"{rootFolderPath}/{subfolderName}/Text.txt";
+            string fileContent = subfolderName;
+            File.WriteAllText(filePath, fileContent);
+
+        }
     }
 }

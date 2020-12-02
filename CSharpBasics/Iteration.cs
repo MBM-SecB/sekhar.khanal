@@ -1,59 +1,33 @@
 using System;
 
-
+namespace SelectAndLoop
+{
 class IterationStatement
 {
-    static void Main6()
+    static void Main4()
     {
         IterationStatement iterationStatement = new IterationStatement();
-        iterationStatement.LearnWhileLoops();
+        iterationStatement.LearnForLoop();
 
-        AccessModifier accessModifier  = new AccessModifier();
-        accessModifier.DoSomething();
-
-        Person person = new Person();
-        person.age = 34;
+        SelectionStatement selection;
     }
-    void LearnForLoops()
+    void LearnForLoop()
     {
-        for(int i=0;i<20;i++)
+        for(int i = 0; i < 10; i++)
         {
-        Console.WriteLine("Hello There");
+            Console.WriteLine("Ram Bahadur is a boy.");
         }
-
-        byte[] personAges = {23,46,86,73};
-
-        foreach(byte age in personAges)
+        int[] numbers = {5, 70, 9, 10, 5};
+        foreach(int x in numbers)
         {
-            if(age % 2 ==0)
+            if (x % 2 != 0 )
             {
-                Console.WriteLine(age + " is even");
+                Console.WriteLine($"{x} is odd."); //$ sign is use for interpolarion; if variable value has to be declared
             }
-            else
-            {
-                Console.WriteLine(age + " is odd");
+            else{
+                Console.WriteLine($"{x} is even.");
             }
         }
-
-
     }
-
-    void LearnWhileLoops()
-    {
-        char confirm = 'Y';
-        while(confirm == 'Y')
-        {
-            Console.WriteLine("Infinite Loop");
-            Console.Write("Enter any Y to continue: ");
-            confirm = Console.ReadKey().KeyChar;
-        }
-        do
-        {
-            Console.WriteLine("I am inside while loop");
-            Console.Write("Enter any Y to continue: ");
-            confirm = Console.ReadKey().KeyChar;
-        }
-        while(confirm == 'Y');
-        
-    }
+}
 }

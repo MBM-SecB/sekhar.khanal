@@ -1,26 +1,26 @@
-class Person
+using System;
+internal class Person
 {
-    public int age = 23;
-    internal string name = "Azyt";
-
-
-    public string Name {get;set;}
-
-    public string Address {get;}
-
-    public int Age
-     {
-        get
+    private byte age;
+    private int grade;
+    public string name;
+    public string address;
+    public DateTime dob;
+    //getter-setter
+    public byte Age 
+    {
+        get {return age;}
+        set 
         {
-            return age;
-        }
-        set
-        {
-            if(value>20 && value <30)
+            if(value >= 30 && value <= 40)
             {
                 age = value;
             }
         }
-        }
-
+    }
+    //auto implemented properties
+    public string Address { get; set; }
+    
+    //read only property
+    public string Name { get; } 
 }

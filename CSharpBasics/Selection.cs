@@ -1,63 +1,51 @@
 using System;
 
-
+namespace SelectAndLoop
+{
 class SelectionStatement
 {
-
     static void Main2()
     {
-        SelectionStatement s = new SelectionStatement();
-        // s.CheckNumber();
-        s.CheckNumber();
+        SelectionStatement ss = new SelectionStatement();
+        ss.LearnSwitch();
     }
-    void CheckNumber(){
-        Console.Write("Enter number: ");
-        string input = Console.ReadLine();
-
-        int number = int.Parse(input);
-
-        if((number % 2) ==0)
+    void LearnIfElse()
+    {
+        Console.Write("Enter any number::");
+        string input = Console.ReadLine(); //input will be entered as a string always
+        byte x = byte.Parse(input); //converts input string to byte type
+        if(x == 34)
         {
-            Console.WriteLine("Your entered number is Even");
+            Console.WriteLine("The value of x is 34");
+        }
+        else if(x == 20)
+        {
+            Console.WriteLine("The value of x is 20");
         }
         else
         {
-            Console.WriteLine("Your entered number is Odd");
+            Console.WriteLine("The value of x is not 20 or 30");
         }
     }
-
-    void LearnSwitchStatements()
+    void LearnSwitch()
     {
-        Console.Write("Enter your hobby: ");
-        string input = Console.ReadLine();
-
-        switch(input)
+        char option = 'a';
+        switch(option)
         {
-            case "books":
-            Console.Write("Books");
+            case 'n':
+            Console.WriteLine("You Clicked n");
             break;
-
-            case "football":
-            Console.Write("football");
+            case 'y':
+            case 'Y': //we can group both the cases if they perform the similar task
+            Console.WriteLine("You Clicked y");
             break;
-
-            case "swimming":
-            Console.Write("swimming");
+            case 'x':
+            Console.WriteLine("You Clicked x");
             break;
-
-            case "puzzle":
-            Console.Write("puzzle");
-            break;
-
-            case "sports":
-            Console.Write("sports");
-            break;
-
             default:
-            Console.Write("You poor man without a hobby");
-            break;
-
+            Console.WriteLine("You Clicked extra value");
+            break;      
         }
-
     }
+}
 }
