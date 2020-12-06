@@ -56,7 +56,7 @@ public class EmployeeController : Controller
 
       public ActionResult Edit(Employee employee)
     {
-        
+        db.Employees.Attach(employee);
         db.Employees.Update(employee);
         db.SaveChanges();
         return RedirectToAction(nameof(Index));
